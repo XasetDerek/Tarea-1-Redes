@@ -24,7 +24,7 @@ for nombre, archivo in archivos.items():
         datos[nombre] = pd.DataFrame({"RTT": rtts})
     
     except FileNotFoundError:
-        print(f"⚠ No se encontró el archivo: {archivo}")
+        print(f"Error: No se encontró el archivo: {archivo}")
 
 plt.figure(figsize=(10, 6))
 for nombre, df in datos.items():
@@ -37,5 +37,6 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.savefig("grafico_rtt_comparativo.png")
+
 
 
